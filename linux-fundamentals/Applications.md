@@ -1,0 +1,40 @@
+Desktop Applications
+- OpenOffice
+- LibreOffice is forked from OpenOffice
+- GIMP (GNU Image Manipulation)
+
+Server Applications
+- Web Server
+	- Apache Host
+		- hosts the files/serves them for incoming web requests
+	- NGINX
+		- proxy request for something else
+		- load balancing
+			- balance incoming requests for backend web hosts
+		- open source
+- Database
+	- MYSQL
+		- LAMP Stack
+			- Linux
+			- Apache
+			- MYSQL
+			- PHP (Can also be Perl/Python)
+	- MariaDB
+		- fork of MYSQL
+			- open source MYSQL code and created a parallel project called MariaDB
+- File Sharing
+	- Samba
+		- file sharing with both linux and windows clients
+		- uses CIFS (Common Internet File System)
+		- typically used in a local network, you don't typically use samba to share files over the internet
+	- NFS
+		- network file system
+		- distributed file system protocol
+		- permits client hosts to access files and directories over the network as local storage
+		- shared documents and files, common web application libraries, or even home directories
+- Private Cloud
+	- OwnCloud
+		- kinda like Dropbox/OneDrive/Google Drive but on your own hardware
+	- NextCloud
+		- a fork of OwnCloud
+		- OwnCloud is open source but its enterprise feature aren't. NextCloud maintains all features as open-source
