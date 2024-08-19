@@ -20,6 +20,54 @@
             }
           },
           {
+            "id": "e8a9bc537133044d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Open Source and Licensing.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "99eecbc3874a9db9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Commands.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "7cb985735205a229",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "2.2 Getting Help.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "5b841b49816fa8b2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "2.1 Command Line Basics.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "3883cc231051d79a",
             "type": "leaf",
             "state": {
@@ -55,7 +103,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -122,7 +171,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Applications.md",
+                "file": "Commands.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +188,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Applications.md",
+                "file": "Commands.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,7 +211,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Applications.md"
+                "file": "Commands.md"
               }
             }
           }
@@ -183,12 +232,20 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "d8adcef9355b8e47",
+  "active": "42ead48da0ab6eac",
   "lastOpenFiles": [
+    "2.2 Getting Help.md",
+    "Commands.md",
+    "2.1 Command Line Basics.md",
+    "Pasted image 20240817215032.png",
+    "Pasted image 20240817215016.png",
+    "Pasted image 20240817214954.png",
+    "Pasted image 20240817205633.png",
+    "1.4 Working in Linux.md",
+    "Open Source and Licensing.md",
+    "Applications.md",
     "Development Languages.md",
     "Package Management.md",
-    "Commands.md",
-    "Pasted image 20240817120918.png",
-    "Applications.md"
+    "Pasted image 20240817120918.png"
   ]
 }
