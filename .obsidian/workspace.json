@@ -1,92 +1,39 @@
 {
   "main": {
-    "id": "a1430455c4905e41",
+    "id": "01c36a235aa0d665",
     "type": "split",
     "children": [
       {
-        "id": "721a522b08c8b023",
+        "id": "c7e54ae00ec3a888",
         "type": "tabs",
         "children": [
           {
-            "id": "d8adcef9355b8e47",
+            "id": "eebc70453c5cbb93",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "e8a9bc537133044d",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "99eecbc3874a9db9",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "7cb985735205a229",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "5b841b49816fa8b2",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "3883cc231051d79a",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "e6e2c33e15a9aa87",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "42ead48da0ab6eac",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Commands.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
-        ],
-        "currentTab": 7
+        ]
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "2151b77741712d8e",
+    "id": "7e1d66beaad27978",
     "type": "split",
     "children": [
       {
-        "id": "5955a0f2276a2756",
+        "id": "f81bafba0c814645",
         "type": "tabs",
         "children": [
           {
-            "id": "4244b9ec41784fab",
+            "id": "a346ff6a897d594e",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -96,7 +43,7 @@
             }
           },
           {
-            "id": "916bae3c547e3da7",
+            "id": "ed79f5b661dbe1f7",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -111,7 +58,7 @@
             }
           },
           {
-            "id": "cb5108280273bc09",
+            "id": "d314d8ec2f4d842a",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -126,19 +73,20 @@
     "collapsed": true
   },
   "right": {
-    "id": "017f5bf1e4b0e59b",
+    "id": "d3e4858b186fb4aa",
     "type": "split",
     "children": [
       {
-        "id": "afcb123b1ed87705",
+        "id": "4e8f10efb1acc909",
         "type": "tabs",
         "children": [
           {
-            "id": "f04449d14e3c8660",
+            "id": "229be01804559aaa",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Commands.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -150,18 +98,19 @@
             }
           },
           {
-            "id": "0b6b0b8fc08e06a4",
+            "id": "a655915f6c7d4b5a",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Commands.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "dd7ae19bcfcddb24",
+            "id": "1d7f928fb0d07962",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -172,11 +121,13 @@
             }
           },
           {
-            "id": "36c27f98cf2ca738",
+            "id": "770f5ce0d7f12795",
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Commands.md"
+              }
             }
           }
         ]
@@ -196,20 +147,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "42ead48da0ab6eac",
+  "active": "eebc70453c5cbb93",
   "lastOpenFiles": [
-    "2.2 Getting Help.md",
-    "Commands.md",
-    "2.1 Command Line Basics.md",
-    "Pasted image 20240817215032.png",
-    "Pasted image 20240817215016.png",
-    "Pasted image 20240817214954.png",
-    "Pasted image 20240817205633.png",
-    "1.4 Working in Linux.md",
-    "Open Source and Licensing.md",
-    "Applications.md",
-    "Development Languages.md",
-    "Package Management.md",
-    "Pasted image 20240817120918.png"
+    "Pasted image 20240821191911.png",
+    "Pasted image 20240821185657.png",
+    "Pasted image 20240820190205.png",
+    "Untitled.md"
   ]
 }

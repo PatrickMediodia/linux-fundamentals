@@ -143,14 +143,14 @@ This is what a newline character looks like \n, it will create a new line
 	- `pat:x:1000:1000:Pat,,,:/home/pat:/bin/bash`
 - home directory is where you will be placed once you login to a system
 
-Going to your home directory
+**Going to your home directory**
 - `cd`
 - `cd ~`
 - `cd $HOME`
 
 `cd -` - go to the last directory you were in
 
-Paths
+**Paths**
 - Absolute
 	- `/path/from/root`
 	- specify the path starting from the root
@@ -158,13 +158,13 @@ Paths
 	- `path/relative/to/current/directory`
 	- path that is relative to the working directory to where you are right now
 
-Directories and Listing Files
+**Directories and Listing Files**
 - `ls -lat var/log` - oldest file
 - `ls -lS var/log` - sort by largest file
 - `ls -l sos_commands/networking/netstat_-W-neopa` - when file was last modified
 - `ls -lu sos_commands/networking/netstat_-W-neopa` - when the file was last accessed
 
-Directory Commands
+**Directory Commands**
 - `mkdir <directory>` - create new directory
 - `cp -r <from dir> <to dir>` - copy files of a directory to another
 	- recursively copy
@@ -179,3 +179,138 @@ Directory Commands
 - `cat <filename>` - print out the contents of a file
 - `mv -T <from dir> <to dir>` - overwrite a directory
 	- directory to be overwritten must be empty
+
+**Case Sensitivity**
+- lowercase and uppercase have different ascii representations
+- `cat/etc/fstab`
+	- shows file system mounts
+- `ext4` is a case sensitive file system
+
+**Globbing**
+- partial matching to work with groups of files and directories
+- uses wildcard characters to create a pattern
+![[Pasted image 20240820190205.png]]
+- `?` - matches every single character
+	- ex. `ls ?????` - every file that has 5 characters will be returned
+	- ex. `ls ????1` - every file that has 5 characters with 4 being any and it ending with 1
+	- ex. `ls ????[1-3]` - every file that has any 4 starting characters and ends with 1 to 3
+- `*` - matches 0 to any additional number of characters
+	- ex. `*4` - every file with any length that ends in a 4
+	- ex. `ls *[[:digit:]]` - matches anything that ends with a digit
+
+**Directories and Files**
+- `cp -R ~/Practice/Test ~/Report/` - copy Test into Report directory
+- `mv ~/Practice/sos_commands/filesys/mount-l ~/Report/mounts.txt` - move the mount-l file to a new file named `mounts.txt`
+
+**Archiving**
+![[Pasted image 20240821185657.png]]
+- `tar` - tape archive
+- `tar cf <tar file name>.tar <files to include>`
+	- `tar cd archive.tar test_file_*`
+	- creates a tar file of the files that are included
+- `tar tf <tar file name>.tar`
+	- `tar tf archive.tar`
+	- `tar tvf archive.tar` - verbose
+	- lists the file or contents of a tar file
+- `tar rf <tar file name>.tar <files to append>`
+	- `tar rf archive.tar file?`
+- `tar xf <tar file name>.tar <files to extract>`
+	- `tar xf archive.tar file3`
+	- extract specific files
+	- if directory, use relative path of the tar file
+- `tar xf <tar file name>.tar`
+	- `tar xf archive.tar`
+	- extract every file in a tar file
+- `tar xf <tar file name> --wildcards <file with globbing>`
+	- `tar xf archive.tar --wildcards 'test_file_?'`
+	- extract all files that start with test_file_ and 1 character after
+	- when you widthdraw files from the archive, you are not removing them from being inside the archive
+- `tar --delete --file=<tar file name>.tar <file to delete>`
+	- `tar --delete --file=archive.tar file3`
+	- delete a file from a tar
+	- not usually used
+	- usually extract it, work with it, and then put it back together
+
+**Disk**
+- `df -h` - show disk space and human readable
+
+**Archives and Compression**
+![[Pasted image 20240821191911.png]]
+- `tar czf <archive file name>.tar.gz <files to include>`
+	- gzip is the default compression algorithm used by tar
+	- optimized for text files
+	- good enough for most use cases
+- `tar cjf <archive file name>.tar.bz2 <files to include>`
+	- bzip2 file
+	- alternative compression algorithm
+	- slower than gz2 due to higher compression
+- `tar xzf <archive file name>.tar.gz <files to extract>`
+- `zip -r <zip name>.zip <files to include>`
+	- appox the same as gzip
+	- all in one compression algorithm
+
+**Pipe**
+- output from one command as the input to another command
+- `|` - pipe symbol
+- `grep` - searches any given input files, selecting lines that match one or more patterns
+	- `grep [OPTIONS] [PATTERN] [FILE]`
+	- Sample
+		- `grep -E ^M <file>`
+			- find lines in file that start with an uppercase M
+			- `-E` means an expression search
+		- `cat <file> | grep <expression>`
+			- the output of the cat file will be piped into the grep as the input as a specific file was not specified
+		- `cat <file> | grep <expression> | wc -l`
+			- cat the contents of a file to view it
+			- use grep and then a regex expression to filter it out
+			- count the number of lines that has been filtered
+		- `!<command/expression>`
+			- `!wc` - will rerun the last command that starts with `wc`
+		- `cat /etc/passwd | grep root`
+			- only show the information for a specific user
+		- `cat /etc/passwd | grep root | cut -d: -f6`
+			- only get the home directory for the user root
+			- `:` is the delimiter
+			- `-f6` means the 6th item in the `array` of items based on the delimiter
+			- kinda like the `split` array function in python
+
+**I/O Redirection**
+- either feed and input to a command from a file
+- or send the output of a command to a file
+- commands
+	- `cat <file> | grep <expression> > <file>`
+		- send the output of cat that has been filtered with grep into a file
+		- rather than displaying to `stdout`, it is written to a file
+		- creates the file if it does not exist
+		- if the file exists, it overwrites the file
+	- `cat <file> | grep <expression> >> <file>`
+		- appends to the end of the file rather than overwrite it
+	- `cat <file> | sort >> <file>`
+		- sorts the output of the file
+		- and appends to the file
+	- `grep <expression> < <filename>`
+		- grep the outputs of filename
+
+**Regular Expressions**
+- pattern matching, kinda like globbing
+- more discrete and way more flexible
+	- `grep -E`
+		- extended grep
+		- this is the same as `egrep` but that has been deprecated
+	- `^<expression>` - starts with
+	- `<expression>$` - ends with
+	- `<expression1>|<expression2>` - either expression1 or expression 2
+	- `expression1*expression2` - anything between expression1 or expression2 with a length of 0 or more
+		- ex. `cat <file> | grep -E "Ap*le"` vs `cat <file> | grep -E "Ap+le"`
+			- the first expression also captures `ale` because `*` is 0 or more
+			- the second expression needs to have atleast one instance `p` since it uses `+`
+	- `+` - kinda like `*` but is 1 or more
+	- `?` - maybe
+	- `<expression>[digit range / letter range]<expression>` 
+		- finds anything in between that is in the digit and letter range
+		- in this case it only accepts one instance of this range
+	- `ls -la /usr/share | wc -l`
+	- `cat /var/log/dpkg.log | grep unpacked | wc -l`
+	
+	- `cat /usr/share/dict/words | grep -E "^l...x$"`
+	- `cat /usr/share/dict/words | grep -E "^y..$|^z..$" | wc -l >> value.txt`
