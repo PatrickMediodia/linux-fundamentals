@@ -314,3 +314,145 @@ This is what a newline character looks like \n, it will create a new line
 	
 	- `cat /usr/share/dict/words | grep -E "^l...x$"`
 	- `cat /usr/share/dict/words | grep -E "^y..$|^z..$" | wc -l >> value.txt`
+
+**Where Data is Stored**
+![[Pasted image 20240902172407.png]]
+- everything in `/etc` dir is configuration related
+- `/boot` 
+	- before, linux had the boot stuff in another partition
+	- nowadays it is included in the same partition
+	- `uname -r`
+		- show the current kernel being used
+- `/etc/fstab`
+	- maps which disk partition to mount automatically
+	- `blkid` - see the UUID of the block devices
+- `/etc/passwd`
+	- shows the users and their information
+	- `<user>:<password>:<user-id>:<group-id>:<gekko/long name>:<home/login dir>:<login shell>`
+- `/etc/group`
+	- list of groups
+	- `<group name>:<password>:<group-id>:<members of group>`
+- `/etc/hosts`
+	- mapping of host names and IP addresses
+	- `ip hostname`
+- `/etc/resolve.conf`
+	- specify the name servers that we will look up our IP addresses to
+- `/etc/<APPLICATION>`
+	- has the configuration files for applications
+- `/sys`
+	- `mount | grep sysfs`
+	- sysfs is a file system that is volatile and lives in the ram
+	- export of the kernel data structure and their attributes and the link between them
+	- virtual file system
+	- export information about the different kernel subsystems
+
+**Processes**
+- data used by processes
+- `PID (process id)` - unique identifier of a process
+	- every process that is running will have a process id, which user that is running it, etc.
+	- priority
+		- the higher the number, the lower the priority
+		- A value of `1` will be prioritized over lets say `20`
+- `Process Data:` - `/proc/<PID>`
+	- shows information about processes
+	- you have a process folder for each process that is currently running
+	- `cat /proc/self/status`
+		- information about running processes
+		- every running process has a status file
+- `ps aux`
+	- show every process in the system using the BSD syntax
+	- prints it to be human readable
+	- `ps aux | grep <user> | wc -l`
+		- show the number processes for a user
+- `ps -eF`
+	- this is the same as aux and is more modern
+- can use `top`/`htop` to see processes more interactively
+- `/sys/`
+	- system information regarding devices/attached hardware
+- `/dev`
+	- character or block device
+	- something that is moving characters back and forth
+	- stuff that is reading or writing to data of some kind
+	- this makes it so that linux is able to treat the drive itself as a file
+	- `/dev/sda` - hard drive
+	- `dev/sda1` - the partition itself
+	- `/dev/mapper` - used in LVMs to map the virtual block devices
+
+**System Messaging**
+- viewing and accessing system messages
+- kernel messages are sent to a kernel ring buffer (circular queue)
+	- a special buffer that remain constant in size
+	- new messages come in and push out the old messages
+- `dmesg`
+	- print out the kernel ring buffer
+	- used for troubleshooting hardware issues
+
+**Logging**
+- common locations for system and application log data
+- application, event, system, service, kernel logs
+- `/var/log/messages`
+	- general system logs and messages
+	- everything goes into this
+	- `/var/log/syslog` - for debian based systems
+	- `<date> <timestamp> <user> <system> : <log message>` 
+- `/var/log/auth.log`
+	- authentication logs
+	- `/var/log/secure` - for red-hat based systems
+	- PAM - pluggable authentication modules
+		- anything involving PAM is authentication
+	- `<date> <timestamp> <user> <subsystem> <log>`
+- `/var/log/boot.log` - system boot logs
+- `/var/log/cron.log` - cron job logs
+- `/var/log/kern.log` - kernel logs
+- `/var/log/faillog` - authentication failure logs
+
+**Processes Lab**
+- How many processes are currently running?
+	- `ps -eF | wc -l`
+- What is the current system load?
+	- `uptime`
+	- `cat /proc/loadavg`
+- How many processes are running as `cloud_user`?
+	- `ps -eF | grep cloud_user | wc -l`
+	- `ps -U cloud_user | wc -l` - better because it actually gets for that specific user
+- What is the PID of the `xfce4-session` process?
+	- `ps -ef | grep xfce4-session | grep -v grep`
+	- `grep -v grep` removes the grep command from the output
+- How many threads is the `xfce4-session` process using?
+	- find out the PID of the `xfce4-session`
+		- `ps aux | grep xfce4-session | grep -v grep`
+	- view the status to see the threads
+		- `cat /proc/<PID>/status | grep Threads`
+- Create a shell script for this
+```
+#!/bin/bash
+
+# if the first parameter is not empty
+if [ -n $1 ]
+then
+    _pid=$(ps aux | grep -E "$1\$" | grep -v grep | grep -v threads.sh | awk '{print $2}')
+    cat /proc/$_pid/status | grep Threads
+fi
+```
+
+**Viewing Logging Files Lab**
+- Attempt to `curl` the address on the local host
+	- `curl -I localhost` - only curl for the headers
+- Determine how many times 10.0.1.10 has accessed the website
+	- `sudo cat /var/log/httpd/access_log | grep -E "^10.0.1.10" | wc -l`\
+	- `/var/log/http/access_log` - has the logs of who has tried to access `httpd`
+	- `grep -E "^10.0.1.10"` - regular expression and must start with the IP `10.0.1.10`
+- While viewing the access log, attempt to reach the web server from your computer via `http://[PUBLIC IP]/index.html`
+- Find the new entry in the log
+	- `sudo tail -f /var/log/httpd/access_log`
+		- `-f` is follow, meaning all new entries will be appended to the bottom
+	- `sudo cat /var/log/httpd/access_log | tail -10`
+- Attempt to reach the web server from your computer via `http://[PUBLIC IP]/server.html`
+
+**CRON**
+- a daemon that runs in the background, it can execute things on an interval
+- `crontab -l` - list out crontabs
+- `crontab -e` - edit crontabs
+- `cat /etc/crontab`
+	- shows the crontab of a user
+	- `<minute> <hour> <day> <month> <day of the week>`
