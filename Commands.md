@@ -456,3 +456,44 @@ fi
 - `cat /etc/crontab`
 	- shows the crontab of a user
 	- `<minute> <hour> <day> <month> <day of the week>`
+
+**Networks**
+- `ip addr show`
+	- shows the list of IP addresses
+	- loopback is always `127.0.0.1`
+	- ipv4 is composed of 8 octets
+	- the CIDR notation specific the portion of the address that is for networks and hosts/IPs
+	- IPv4 is still widely used due to NAT and subnetting strategies
+- `ping`
+	- sends and ICMP network request
+		- `-c` - count
+
+**DNS Client Configuration**
+- hostname --> IP address
+- `host <hostname>` - shows the Ip address of a hostname
+- `dig <hostname>` - shows more data than the host command
+	- `dig @<DNS server> <hostname>` - specify the DNS that we want to get from
+- `/etc/resolv.conf`
+	- used to determine which hosts to use for DNS queries
+	- also shows the configured DNS host (name server)
+- `/etc/hosts`
+	- used for statically mapping IP addresses to hostnames
+	- used for development usually
+
+**Network Configuration**
+- `ip route show` - shows the routing table
+	- `default` is the route
+	- if local, it is in the other network interfaces
+	- the router is the `catch all` or `else` clause
+- `ifconfig` - might be deprecated soon
+	- view and change interface configuration
+- `nmcli` - little more information about the interfaces on your device
+- `netstat` - view active connections
+	- `-tlnp` 
+		- `-t` - tcp
+		- `-u` - UDP
+		- `-l` - listening
+		- `-n` - numeric (only show IPs)
+		- `-p` - process IDs
+	- `cat /etc/services | grep <port #>`
+		- to know the process number running on a specific port
