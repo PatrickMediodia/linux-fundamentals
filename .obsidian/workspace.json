@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "c7e54ae00ec3a888",
+        "id": "1ef23878525cd646",
         "type": "tabs",
         "children": [
           {
-            "id": "adda288c894a7453",
+            "id": "e24dfc27a0a5428c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Commands.md",
+                "file": "5.1 Basic Security.md",
                 "mode": "source",
                 "source": false
               }
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Commands.md",
+                "file": "5.1 Basic Security.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Commands.md",
+                "file": "5.1 Basic Security.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Commands.md"
+                "file": "5.1 Basic Security.md"
               }
             }
           }
@@ -147,15 +147,24 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "adda288c894a7453",
+  "active": "e24dfc27a0a5428c",
   "lastOpenFiles": [
-    "Networks and Routers.md",
+    "images/Pasted image 20240904182637.png",
+    "Pasted image 20240904182637.png",
+    "5.1 Basic Security.md",
+    "5.1 Basic Security",
+    "images/Pasted image 20240902172407.png",
+    "images/Pasted image 20240903180933.png",
+    "images/Pasted image 20240821191911.png",
+    "images/Pasted image 20240821185657.png",
+    "images/Pasted image 20240820190205.png",
+    "images/Pasted image 20240817215032.png",
+    "images/Pasted image 20240817215016.png",
+    "images/Pasted image 20240817214954.png",
+    "images/Pasted image 20240817205633.png",
+    "images",
+    "Images",
     "Commands.md",
-    "Pasted image 20240903180933.png",
-    "Pasted image 20240902172407.png",
-    "Pasted image 20240821191911.png",
-    "Pasted image 20240821185657.png",
-    "Pasted image 20240820190205.png",
-    "Untitled.md"
+    "Networks and Routers.md"
   ]
 }
