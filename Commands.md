@@ -497,3 +497,14 @@ fi
 		- `-p` - process IDs
 	- `cat /etc/services | grep <port #>`
 		- to know the process number running on a specific port
+
+Managing Files and Permissions Lab
+- `sudo passwd -l <user>` - lock a users account
+- `last` - shows the last login for all the user
+	- if a user is still logged in and you want to log them out, kill the process of their shell
+- `for i in nancy greg jeremy; do sudo useradd -m $i; done` - create users with home directories `-m`
+- `for i in nancy greg jeremy; do sudo userdel $i; done` - delete users
+- `sudo userdel <user>` - remove previous user
+- `sudo chown -R <new_user>:<new_group> /home/<old_user>` - recursively chown the directory of the old user to be owned by the new user
+- `sudo chmod g+rw /home/<old_user>` - allow the group to be able to read and traverse the folder of the chowned used
+	- note, you need to have execute access to be able to open a directory 
