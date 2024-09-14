@@ -574,3 +574,39 @@ default file/directory - umask = default perms\
 `df -H` - shows the free disk space on your computer
 
 `pkill -f <process name>` - no need to specify or know the process id
+
+Managing Files and Permissions Lab
+- `sudo passwd -l <user>` - lock a users account
+- `last` - shows the last login for all the user
+	- if a user is still logged in and you want to log them out, kill the process of their shell
+- `for i in nancy greg jeremy; do sudo useradd -m $i; done` - create users with home directories `-m`
+- `for i in nancy greg jeremy; do sudo userdel $i; done` - delete users
+- `sudo userdel <user>` - remove previous user
+- `sudo chown -R <new_user>:<new_group> /home/<old_user>` - recursively chown the directory of the old user to be owned by the new user
+- `sudo chmod g+rw /home/<old_user>` - allow the group to be able to read and traverse the folder of the chowned used
+	- note, you need to have execute access to be able to open a directory
+
+**Temporary Files and Directories Lab**
+- Get the files and put it in `/tmp`
+	- `cd /tmp`
+	- `wget <link>`
+- Unarchive the tar file
+	- `tar -xf <filname>.tar`
+- Recursive ls the directory and put the output in a file
+	- `tmp_file=$(mktemp)`
+	- `ls -laR <directory> >> tempfile`
+- Move the `version.txt` file to `/var/log` for more permanent storage
+	- `mv <directory>/<file> /var/log`
+
+Add a new path to the path variable
+````
+echo 'PATH=$HOME/<path>:$PATH' >> .bashrc
+source .bashrc
+````
+
+Create new symlinks
+```
+ln -s /usr/lib/rpm/rpmdb_load /home/cloud_user/bin/rpm_load
+ln -s /usr/lib/rpm/rpmdb_verify /home/cloud_user/bin/rpm_verify
+ln -s /usr/lib/rpm/rpmdb_dump /home/cloud_user/bin/rpm_dump
+```

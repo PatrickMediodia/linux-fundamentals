@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Practice Exam Answers.md",
+                "file": "Commands.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Practice Exam Answers.md",
+                "file": "Commands.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Practice Exam Answers.md",
+                "file": "Commands.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Practice Exam Answers.md"
+                "file": "Commands.md"
               }
             }
           }
@@ -148,8 +148,20 @@
   },
   "active": "b5be9453ec61f60a",
   "lastOpenFiles": [
-    "Docker.md",
     "Practice Exam Answers.md",
+    "images/Pasted image 20240907221709.png",
+    "images/Pasted image 20240907221642.png",
+    "images/Pasted image 20240907215840.png",
+    "images/Pasted image 20240907215821.png",
+    "images/Pasted image 20240907162943.png",
+    "images/Pasted image 20240907162931.png",
+    "images/Pasted image 20240907162858.png",
+    "images/Pasted image 20240907162843.png",
+    "images/Pasted image 20240907150157.png",
+    "images/Pasted image 20240907150131.png",
+    "6. Temporary Files and Directories.md",
+    "5.4 Manage File Permissions and Ownership.md",
+    "Docker.md",
     "Commands.md",
     "5.1 Basic Security.md",
     "2.2 Getting Help.md",
@@ -158,17 +170,7 @@
     "1.2-Desktop-Applications.md",
     "5.2 Users and Groups.md",
     "password.md",
-    "images/Pasted image 20240905175931.png",
-    "Pasted image 20240905175931.png",
-    "images/Pasted image 20240904182637.png",
-    "Pasted image 20240904182637.png",
     "5.1 Basic Security",
-    "images/Pasted image 20240902172407.png",
-    "images/Pasted image 20240903180933.png",
-    "images/Pasted image 20240821191911.png",
-    "images/Pasted image 20240821185657.png",
-    "images/Pasted image 20240820190205.png",
-    "images/Pasted image 20240817215032.png",
     "images",
     "Images",
     "Networks and Routers.md"
