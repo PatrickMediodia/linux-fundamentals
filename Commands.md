@@ -497,3 +497,80 @@ fi
 		- `-p` - process IDs
 	- `cat /etc/services | grep <port #>`
 		- to know the process number running on a specific port
+
+`getfacl` - get file access control lists
+`/usr/bin` - this is where binaries are put and is automatically in the path there for you can execute it from everywhere
+`which <binary/exec file>` - locate executable file associated with the command through the path environment variable
+
+`ls -i` - shows the i-node number, if hard linked, this is the same
+
+`diff` - search about this
+
+edit sudoers file
+- `visudo` - use this when editing
+
+wheel group is full access
+if may `%` sa name ng sudoers file, this is the 
+
+tar file stuff
+- compress
+- uncompress
+- check files inside
+
+set hostname - `hostnamectl set-hostname`
+
+`df -h` - disk space
+`du` - disk usage
+
+`alias`
+
+passwordless ssh
+- `ssh-keygen`
+- `ssh-copy-id -i <key> <user>@<ip>`
+- authorized keys
+- `~/.ssh/authorized_keys`
+
+`/etc/ssh/sshd_config`
+- change `PermitRootLogin` - to be able to ssh as root
+
+`touch filename{1..<n>}`
+
+`sudo -l` - shows the list of permissions that the user can use `sudo` for
+
+`passwd` - change the password of a user
+`chage`
+
+`mkdir -p` - create parent directories if not yet there
+
+default file/directory - umask = default perms\
+- file - 666
+- directory - 777
+- edit in `/etc/login.defs`
+
+`setfacl` - 
+
+`find <dir> -type f | grep <expression> | xargs`
+
+`cd -` - go to previous directory 
+
+`which <bin>` - shows the path of the binary that is being targeted
+
+`cmp` - to show if there is a difference
+`diff <file1> <file2>` - shows the actual difference
+
+`find <directory> -name <filename> -type f -perm`
+
+`cat /etc/resov.conf` - show your DNS server
+
+`ufw allow 80` - ufw is a firewall
+- `ufw status` - show ufw stuff
+
+`traceroute <ip>` - shows the hops it took to get to the destination
+
+`netstat -tulpn | grep <expression>` - shows the network stuff on your machine
+
+`free` - shows RAM data about your system
+
+`df -H` - shows the free disk space on your computer
+
+`pkill -f <process name>` - no need to specify or know the process id
