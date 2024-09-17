@@ -46,3 +46,48 @@ case ${1,,} in
 esac
 ```
 
+**Script for Creating Users**
+```
+#!/bin/bash
+
+USER_FILE=$1
+
+if [ USER_FILE = "" ]; then
+        echo "No input file specified"
+        exit 10
+elif test -e $USER_FILE; then
+        for user in `cat $USER_FILE`
+        do
+                echo "Creating the user "$user" user"
+                # sets the default file to linux
+                useradd -m $user; echo "$user:linux" | chpasswd
+        done
+        exit 20
+else
+        echo "Invalid input file"
+        exit 30
+fi
+```
+
+**Deleting Users**
+```
+#!/bin/bash
+
+USER_FILE=$1
+
+if [ USER_FILE = "" ]; then
+        echo "No input file specified"
+        exit 10
+elif test -e $USER_FILE; then
+        for user in `cat $USER_FILE`
+        do
+                echo "Delet the user "$user" user"
+                # sets the default file to linux
+                userdel -r $user
+        done
+        exit 20
+else
+        echo "Invalid input file"
+        exit 30
+fi
+```
