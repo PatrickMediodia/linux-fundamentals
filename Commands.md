@@ -203,6 +203,7 @@ This is what a newline character looks like \n, it will create a new line
 - `mv ~/Practice/sos_commands/filesys/mount-l ~/Report/mounts.txt` - move the mount-l file to a new file named `mounts.txt`
 
 **Archiving**
+- tar is only to put files together, it does not compress them
 ![[Pasted image 20240821185657.png]]
 - `tar` - tape archive
 - `tar cf <tar file name>.tar <files to include>`
@@ -248,6 +249,12 @@ This is what a newline character looks like \n, it will create a new line
 - `zip -r <zip name>.zip <files to include>`
 	- appox the same as gzip
 	- all in one compression algorithm
+- `bzip2 <files to zip> <path to new bzip file>`
+	- `bzip2 -d <file to decompress>`
+- `gzip <files to zip> <path to new gzip file>`
+
+- use `z` for gzip
+- use `j` for bzip
 
 **Pipe**
 - output from one command as the input to another command
@@ -609,4 +616,69 @@ Create new symlinks
 ln -s /usr/lib/rpm/rpmdb_load /home/cloud_user/bin/rpm_load
 ln -s /usr/lib/rpm/rpmdb_verify /home/cloud_user/bin/rpm_verify
 ln -s /usr/lib/rpm/rpmdb_dump /home/cloud_user/bin/rpm_dump
+```
+
+SSH Into Another Server Without SSH Key
+```
+ssh-keygen
+ssh-copy-id -i <key> <user>@<ip>
+```
+
+Execute a Command without opening their interactive shell
+```
+ssh <user>@<ip> <command>
+```
+
+SCP - Secure Copy
+```
+scp <user>@<ip>:<path to file or dir> <local path> // copy from remote to local
+scp <local path> <user>@<ip>:<path to file or dir> // copy from local to remote
+```
+
+SFTP
+```
+sftp <user>@<ip>
+mget <file path>
+```
+
+Man and Info Pages
+```
+// what you should probably check first, is shorter than others
+<service> --help
+<service> -?
+
+// more comprehensive
+man <service>
+info <service>
+
+// very barebones
+whatis <service>
+apropos <service> // also shows the specifics per page
+
+// located in /usr/share/doc
+```
+
+Tree
+```
+tree <path> // you might want to use root permissions to be able to view all of the files
+```
+
+Aggregate service log files
+```
+sudo grep <service> <path> > stdout.log 2> stderr.log
+// separate files for stdout and stderr
+
+sudo grep <service> <path> >> stdouterr.log 2>&1
+// one file for both stdout and error
+// redirect stderr to where stdout is currently going
+// &1 resuses the file descriptor
+
+you can also send the the stdout and stderr to /dev/null to silence them
+
+journalctl -u <service> --no-pager >> <path to file>
+// send journalctl logs to path to file
+```
+
+```
+egrep -v // reverse of what you specified, kinda like blacklisting
 ```
