@@ -787,3 +787,53 @@ grep -ir file /usr/share/doc/zip ; grep -ir file /usr/share/doc/zip > grepoutput
 ```
 - this is similar to find, it just depends on which one you prefer
 - find might also be faster
+
+
+Disk Usage
+```
+du -sh
+```
+
+Get a specific file
+```
+tar -xvcf <tar and zipped file> <file to extract>
+```
+
+Make many directories
+```
+mkdir -p ~/new/directory/to/create/{options,for,files} ~/another/new/directory/{file1,file2,file3}
+```
+
+Hard and Soft Links
+```
+ln -s <link name> <path to file>
+ls <link name> <path to file>
+```
+``
+
+Find a hard link of a file
+```
+find / -num <inode #> -exec ls -li {} \; 2> /dev/null
+```
+- uses the find command in the root directory with the specific inode number
+- `exec` executes `ls -li` on `{}` and `\;` denotes the end
+- `2> /dev/null` says to throw the error logs away
+
+Creating users with a directory, primary group, and secondary groups. As well as changing their password
+```
+useradd -m -g <primary group> -G <secondary group> <username>; passwd <username>
+```
+
+Set uid, gid
+```
+chmod u/g+s <file to change>
+```
+- file with `+s` will always execute as the user who owns the file
+- this restricts the file to be added to the directory to be owned by the same user or group only
+
+Sticky bit
+```
+chmod +t
+```
+- only the owner can delete those files
+``

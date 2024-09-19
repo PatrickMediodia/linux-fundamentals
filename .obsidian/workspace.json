@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Bash Commands.md",
+                "file": "Commands.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "d3e4858b186fb4aa",
@@ -85,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Bash Commands.md",
+                "file": "Commands.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Bash Commands.md",
+                "file": "Commands.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Bash Commands.md"
+                "file": "Commands.md"
               }
             }
           }
@@ -148,12 +149,12 @@
   },
   "active": "33fb9cd11f5de07a",
   "lastOpenFiles": [
-    "images/Pasted image 20240918154004.png",
     "Hard vs Soft Links.md",
     "Commands.md",
+    "Bash Commands.md",
+    "images/Pasted image 20240918154004.png",
     "Practice Exam Answers.md",
     "Docker.md",
-    "Bash Commands.md",
     "images/Pasted image 20240907221709.png",
     "images/Pasted image 20240907221642.png",
     "images/Pasted image 20240907215840.png",
@@ -164,7 +165,6 @@
     "Pasted image 20240907215840.png",
     "Pasted image 20240907215821.png",
     "images/Pasted image 20240907162943.png",
-    "images/Pasted image 20240907162931.png",
     "5.4 Manage File Permissions and Ownership.md",
     "5.2 Users and Groups.md",
     "5.1 Basic Security.md",
