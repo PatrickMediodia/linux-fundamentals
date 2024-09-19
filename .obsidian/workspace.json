@@ -69,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "d3e4858b186fb4aa",
@@ -146,7 +147,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "2e3cdd18eb85bc12",
+  "active": "a346ff6a897d594e",
   "lastOpenFiles": [
     "images/Pasted image 20240918154004.png",
     "Hard vs Soft Links.md",

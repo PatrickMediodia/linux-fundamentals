@@ -682,3 +682,108 @@ journalctl -u <service> --no-pager >> <path to file>
 ```
 egrep -v // reverse of what you specified, kinda like blacklisting
 ```
+
+**SUDO Notes**
+```
+sudo -i o - // uses the profile of the root
+sudo // uses the profile of the user
+```
+
+SSH, do a command, then redirect the response back to local
+```
+ssh -t <user>@<up> <command> >> <filepath>
+```
+
+SSH Into another machine with a passphrase
+```
+ssh-keygen
+ssh-copy-id <ip>
+ssh <user>@<ip> //this will ask for the passphrase
+```
+
+Get a specific file and tar it from another server
+```
+ssh <user>@<ip> tar -czvf <file name of tar> <files to tar>
+scp <user>@<ip>:<file from> <file to>
+```
+
+Vim Commands
+```
+gg - top of file
+shift + g - bottom of file
+dd - delete a line
+
+h - left
+j - down
+k - up
+l - right
+
+motions
+<number>
+
+shift + v - visual mode
+yy - copy a line
+u - undo a change
+```
+
+Show all lines and line number that have a certain expression in all of the text files
+```
+grep -wn <expression> <files>
+```
+
+Go to a specific line on a file
+```
+vim +<line> <path to file>
+vim +<do command here> <path to file>
+     - ex. vim +/word <path to file>
+```
+
+
+```
+cloud_user@server1: ~ $ { echo " " ; echo "==== `date` on `hostname` ====" ; df -hT; }
+
+==== Thu Sep 19 07:15:14 UTC 2024 on server1 ====
+Filesystem     Type      Size  Used Avail Use% Mounted on
+devtmpfs       devtmpfs  1.8G     0  1.8G   0% /dev
+tmpfs          tmpfs     1.8G     0  1.8G   0% /dev/shm
+tmpfs          tmpfs     1.8G   17M  1.8G   1% /run
+tmpfs          tmpfs     1.8G     0  1.8G   0% /sys/fs/cgroup
+/dev/xvda2     xfs        20G   14G  6.3G  69% /
+tmpfs          tmpfs     367M  4.0K  367M   1% /run/user/1001
+```
+
+```
+find /home -user cloud_user 2> /dev/null
+```
+- find in `/home` the user `cloud_user` and send all of the errors in `/dev/null`
+
+```
+nl <file>
+```
+- adds numbered lines to the output
+
+```
+sort -n numberedfiles.txt
+```
+- sort numerically
+
+```
+find <dir path> -maxdepth <max depth>
+```
+- sets the max depth of the find command that it will look at
+
+```
+find /etc -maxdepth 1 -name "*.*" -exec du -sh {} \; | sort -h
+```
+
+```
+find /home -user cloud_user -exec grep -i file {} \; 2> /dev/null
+```
+- find in `/home` directory the user `cloud_user` and execute grep inside the file `grep -i file` up until all `{} \;`
+
+```
+grep -ir file /usr/share/doc/zip ; grep -ir file /usr/share/doc/zip | wc -l
+grep -ir file /usr/share/doc/zip ; grep -ir file /usr/share/doc/zip > grepoutput.txt
+```
+- this is similar to find, it just depends on which one you prefer
+- find might also be faster
