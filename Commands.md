@@ -545,7 +545,7 @@ passwordless ssh
 `sudo -l` - shows the list of permissions that the user can use `sudo` for
 
 `passwd` - change the password of a user
-`chage`
+`chage` - change password age
 
 `mkdir -p` - create parent directories if not yet there
 
@@ -836,4 +836,62 @@ Sticky bit
 chmod +t
 ```
 - only the owner can delete those files
-``
+
+
+**Sudoers File**
+```
+/etc/sudoers
+visudo
+```
+
+```
+ph_support ALL=(ALL) NOPASSWD: /q/home/ph_support/.local/bin/docker-compose -f /q/infra/alertgui2/api-v2/docker-compose.yaml up -d
+ph_support ALL=(ALL) NOPASSWD: /q/home/ph_support/.local/bin/docker-compose -f /q/infra/alertgui2/api-v2/docker-compose.yaml down -v
+ph_support ALL=(ALL) NOPASSWD: /q/home/ph_support/.local/bin/docker-compose -f /q/infra/alertgui2/api-v2/docker-compose.yaml down 
+
+ph_support ALL=(ALL) NOPASSWD: /q/home/ph_support/.local/bin/docker-compose -f /q/infra/alertgui2/www/docker-compose.yaml up -d
+ph_support ALL=(ALL) NOPASSWD: /q/home/ph_support/.local/bin/docker-compose -f /q/infra/alertgui2/www/docker-compose.yaml down -v
+ph_support ALL=(ALL) NOPASSWD: /q/home/ph_support/.local/bin/docker-compose -f /q/infra/alertgui2/www/docker-compose.yaml down
+
+ph_support ALL=(ALL) NOPASSWD: /q/home/ph_support/.local/bin/docker-compose -f /q/infra/alertgui2/auth-service/docker-compose.yaml up -d
+ph_support ALL=(ALL) NOPASSWD: /q/home/ph_support/.local/bin/docker-compose -f /q/infra/alertgui2/auth-service/docker-compose.yaml down -v
+ph_support ALL=(ALL) NOPASSWD: /q/home/ph_support/.local/bin/docker-compose -f /q/infra/alertgui2/auth-service/docker-compose.yaml down 
+
+ph_support ALL=(ALL) NOPASSWD: /q/home/ph_support/.local/bin/docker-compose ps
+ph_support ALL=(ALL) NOPASSWD: /q/home/ph_support/.local/bin/docker-compose ps -a
+ph_support ALL=(ALL) NOPASSWD: /q/home/ph_support/.local/bin/docker-compose logs
+ph_support ALL=(ALL) NOPASSWD: /q/home/ph_support/.local/bin/docker-compose pull
+```
+
+```
+<user> ALL=(ALL) NOPASWD: <command>
+
+%<group> ALL=<command alias>
+```
+
+Change account expiry
+```
+chage -l // list account details
+chage -E $(date -d +30days +%Y-%m-%d) <user> // change account expiry
+
+
+chage -l <user> | tee <user>.init // this puts the chage -l output to the <user>.init file and also shows it in the console
+
+
+chage -m <minimum # of days> -M <maximum number of days> <user>
+```
+
+Grouping statements together
+```
+{ statement1; statement2; statement3; } | statement4
+```
+- the outputs of statement 1, 2, and 3 will be executed and then all of its output will be sent to statement 4
+
+Editing the Sudoers File
+```
+User_Alias      ADMINUSERS = testuser, admin_user
+
+Cmnd_Alias      ADMINTASKS = /usr/sbin/useradd, /bin/passwd, sudoedit /etc/hosts
+
+ADMINUSERS      ALL=ADMINTASKS
+```
