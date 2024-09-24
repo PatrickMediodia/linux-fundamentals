@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "c7e54ae00ec3a888",
+        "id": "c981400f2c2c3488",
         "type": "tabs",
         "children": [
           {
-            "id": "33fb9cd11f5de07a",
+            "id": "69fc4d0cf9bce91a",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Commands.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -86,7 +82,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Commands.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +98,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Commands.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,9 +119,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Commands.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -147,10 +139,18 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "33fb9cd11f5de07a",
+  "active": "69fc4d0cf9bce91a",
   "lastOpenFiles": [
-    "Hard vs Soft Links.md",
+    "Systemd.md",
+    "Scheduled Tasks.md",
+    "Pasted image 20240920232355.png",
+    "Managing Packages.md",
+    "FACLs.md",
+    "SE Linux.md",
+    "Firewall.md",
+    "FACL.md",
     "Commands.md",
+    "Hard vs Soft Links.md",
     "Bash Commands.md",
     "images/Pasted image 20240918154004.png",
     "Practice Exam Answers.md",
@@ -164,7 +164,6 @@
     "Pasted image 20240907221642.png",
     "Pasted image 20240907215840.png",
     "Pasted image 20240907215821.png",
-    "images/Pasted image 20240907162943.png",
     "5.4 Manage File Permissions and Ownership.md",
     "5.2 Users and Groups.md",
     "5.1 Basic Security.md",
