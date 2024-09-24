@@ -40,4 +40,3 @@ systemctl status httpd
 ```
 systemctl enable --now httpd
 ```
-

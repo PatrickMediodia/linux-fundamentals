@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Firewall.md",
+                "file": "SE Linux.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "d3e4858b186fb4aa",
@@ -85,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Firewall.md",
+                "file": "SE Linux.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Firewall.md",
+                "file": "SE Linux.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Firewall.md"
+                "file": "SE Linux.md"
               }
             }
           }
@@ -133,8 +134,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -148,11 +148,11 @@
   },
   "active": "d8530e09c76dfd13",
   "lastOpenFiles": [
+    "Firewall.md",
     "SE Linux.md",
     "FACLs.md",
     "6. Temporary Files and Directories.md",
     "Pasted image 20240920232355.png",
-    "Firewall.md",
     "Untitled",
     "Scheduled Tasks.md",
     "Systemd.md",
