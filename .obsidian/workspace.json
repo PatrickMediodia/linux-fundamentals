@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "c981400f2c2c3488",
+        "id": "802c9e7a4f8a04f9",
         "type": "tabs",
         "children": [
           {
-            "id": "69fc4d0cf9bce91a",
+            "id": "d8530e09c76dfd13",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "SE Linux.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -82,6 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "SE Linux.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -98,6 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "SE Linux.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -119,15 +125,16 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "SE Linux.md"
+              }
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -139,16 +146,18 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "69fc4d0cf9bce91a",
+  "active": "d8530e09c76dfd13",
   "lastOpenFiles": [
-    "Systemd.md",
-    "Scheduled Tasks.md",
-    "Pasted image 20240920232355.png",
-    "Managing Packages.md",
-    "FACLs.md",
-    "SE Linux.md",
-    "Firewall.md",
     "FACL.md",
+    "Firewall.md",
+    "SE Linux.md",
+    "FACLs.md",
+    "6. Temporary Files and Directories.md",
+    "Pasted image 20240920232355.png",
+    "Untitled",
+    "Scheduled Tasks.md",
+    "Systemd.md",
+    "Managing Packages.md",
     "Commands.md",
     "Hard vs Soft Links.md",
     "Bash Commands.md",
@@ -159,7 +168,6 @@
     "images/Pasted image 20240907221642.png",
     "images/Pasted image 20240907215840.png",
     "images/Pasted image 20240907215821.png",
-    "6. Temporary Files and Directories.md",
     "Pasted image 20240907221709.png",
     "Pasted image 20240907221642.png",
     "Pasted image 20240907215840.png",
